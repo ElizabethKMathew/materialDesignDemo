@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    module: {
-      rules: [
-        {
+  module: {
+    rules: [{
         test: /\.(scss|css)$/,
         use: [{
             loader: 'style-loader' // creates style nodes from JS strings
@@ -40,6 +40,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/images',
+        to: 'images'
+      }
+    ])
   ]
 };
