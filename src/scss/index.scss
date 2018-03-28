@@ -1,5 +1,9 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
+//Colors used in this file
+
+$color-base: #fff;
+
 #home .navbar {
   margin-bottom: 0;
 }
@@ -12,24 +16,70 @@
   margin: 0 auto;
 }
 
-.mast-head {
-  width: 100%;
-  min-height: 550px;
-  position: relative;
-  background: url('../images/banner.jpg') no-repeat;
-  background-size: cover;
+.nav-outer {
+  background-color: transparent;
+  padding-top: 40px;
 }
 
+.mast-head {
+  background: url('../images/banner.jpg') no-repeat;
+  background-size: cover;
+  min-height: 550px;
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+}
+
+.flex-it {
+  display: flex;
+}
+
+.nav-inner {
+  justify-content: space-between;
+}
+
+.menu-list {
+  .menu-item {
+
+    a {
+      color: $color-base;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 900;
+      overflow: visible;
+      position: relative;
+
+      &:hover {
+        color: #4c98c9;
+        text-decoration: none;
+      }
+
+      &::after {
+        content: '^';
+        font-weight: 300;
+        position: absolute;
+        right: -13px;
+        transform: rotate(180deg);
+      }
+    }
+
+    &:not(:last-of-type) {
+      padding-right: 45px;
+    }
+  }
+}
+
+
 .banner-cnt {
-  height: 200px;
-  width: 560px;
-  position: absolute;
-  top: 0;
   bottom: 0;
+  color: $color-base;
+  height: 200px;
   left: 0;
-  right: 0;
   margin: auto;
-  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 560px;
   z-index: 10;
 
   h2 {
@@ -39,7 +89,7 @@
 
 .overlay {
   img:hover {
-    opacity: 0.15;
+    opacity: .15;
   }
 
   i {
